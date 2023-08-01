@@ -18,14 +18,16 @@ class Game:
         if new_result and isinstance(new_result, Result):
             self._results.append(new_result)
         return self._results
-        pass
+        
     
     def players(self, new_player=None):
         from classes.player import Player
         if new_player and isinstance(new_player, Player):
             self._players.append(new_player)
         return self._players
-        pass
+        
     
     def average_score(self, player):
-        pass
+        result = [game.score for game in self._results if game.player == player]
+        return sum(result) / len(result)
+    

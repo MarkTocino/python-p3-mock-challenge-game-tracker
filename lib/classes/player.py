@@ -49,5 +49,7 @@ class Player:
     
     @classmethod
     def highest_scored(cls, game):
-        pass
+        if not game.players():
+            return None
+        return max(game.players(), key= game.average_score)
         

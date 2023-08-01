@@ -8,9 +8,9 @@ class Result:
         self.score = score
         
         player.results(self)
-        player.games_played(self)
+        player.games_played(game)
         game.results(self)
-        game.players(self)
+        game.players(player)
         self.result_append(self)
     @classmethod
     def result_append(cls, results):
@@ -45,4 +45,4 @@ class Result:
             raise Exception ("game must be instance of Game")
         
     game = property(get_game, set_game)
-    pass
+    
